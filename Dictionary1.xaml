@@ -1,0 +1,98 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Polyclinic">
+    <FontFamily x:Key="GeneralFont">Segoe UI</FontFamily>
+    <Style TargetType="Button">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="Red"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="IsDefault" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="FontFamily" Value="{StaticResource GeneralFont}"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="border" Background="{TemplateBinding Background}" CornerRadius="15">
+                        <ContentPresenter TextBlock.Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="DarkRed"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Label" x:Key="LabelDefault">
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontFamily" Value="{StaticResource GeneralFont}"/>
+    </Style>
+
+    <Style TargetType="DataGridTextColumn">
+        <Setter Property="TextBlock.Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="{StaticResource GeneralFont}"/>
+    </Style>
+
+    <Style TargetType="DatePicker">
+        <Setter Property="FontFamily" Value="{StaticResource GeneralFont}"/>
+    </Style>
+    
+    <Style TargetType="TextBox">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{StaticResource GeneralFont}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="Center" Height="21"/>
+                            <Border x:Name="TextBoxBorder" BorderThickness="1" BorderBrush="Gray">
+                            </Border>
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="2.5 0 0 0" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="TextBoxBorder" Property="BorderBrush" Value="Red"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="TextBoxBorder" Property="BorderBrush" Value="LightGray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="PasswordBox">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{StaticResource GeneralFont}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Grid>
+                            <ContentPresenter VerticalAlignment="Center" Height="21"/>
+                            <Border x:Name="TextBoxBorder" BorderThickness="1" BorderBrush="Gray"/>
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="2.5 0 0 0" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="TextBoxBorder" Property="BorderBrush" Value="Red"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

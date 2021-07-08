@@ -1,0 +1,25 @@
+﻿<Window x:Class="Polyclinic.Windows.Authorized"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Polyclinic.Windows"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="400" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed" SnapsToDevicePixels="True">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Image Width="100" Height="100" Source="/Images/PolyclinicImage.png"/>
+            <Label Content="Вход в систему" HorizontalAlignment="Center" Grid.ColumnSpan="2" FontSize="18" Style="{StaticResource LabelDefault}"/>
+            <TextBlock Text="Логин" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+            <TextBox HorizontalAlignment="Center" x:Name="tboxLogin" Width="200" Margin="0 1"/>
+            <TextBlock Text="Пароль" HorizontalAlignment="Center" Margin="0 5 0 0"/>
+            <PasswordBox HorizontalAlignment="Center" x:Name="tboxPassword" Width="200"  Margin="0 1"/>
+            <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0 20 0 0" Content="Войти" Width="100" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

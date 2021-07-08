@@ -1,0 +1,52 @@
+﻿<Window x:Class="Polyclinic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Polyclinic"
+        mc:Ignorable="d"
+        Title="Платные приёмы в поликлинике" MinHeight="500" MinWidth="850" Height="500" Width="850" WindowStartupLocation="CenterScreen" Closed="Window_Closed" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Path Width="60" Stroke="Red" StrokeThickness="5" HorizontalAlignment="Center">
+            <Path.Data>
+                <PathGeometry>
+                    <PathFigure StartPoint="30 3">
+                        <ArcSegment Point="30 57" Size="27 27"/>
+                        <ArcSegment Point="30 3" Size="27 27"/>
+                    </PathFigure>
+                    <PathFigure StartPoint="30 10">
+                        <LineSegment Point="30 50"/>
+                    </PathFigure>
+                    <PathFigure StartPoint="10 30">
+                        <LineSegment Point="50 30"/>
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        
+        <Grid Grid.Column="1" VerticalAlignment="Center">
+            <Label x:Name="UserName" FontSize="18" Content="Admin"  HorizontalAlignment="Left" Style="{StaticResource LabelDefault}"/>
+        </Grid>
+        
+        <StackPanel Grid.Row="1" Margin="5">
+            <Button  Content="Врачи" x:Name="btnDoctors" Click="btnDoctors_Click"/>
+            <Button Margin="0 5 0 0" Content="Приём пациентов" x:Name="btnPacientsJoin" Click="btnPacientsJoin_Click" Visibility="Collapsed"/>
+            <Button Margin="0 5 0 0"  Content="Пациенты" x:Name="btnPacients" Click="btnPacients_Click" Visibility="Collapsed"/>
+            <Button Margin="0 5 0 0"  Content="Окно отчёта" x:Name="btnOtchet" Click="btnOtchet_Click" Visibility="Collapsed"/>
+            <Button Margin="0 5 0 0"  Content="Создание пользователя" x:Name="btnCreateUser" Click="btnCreateUser_Click" Visibility="Collapsed"/>
+            <Button Margin="0 5 0 0"  Content="Назад" x:Name="btnBack" Click="btnBack_Click"/>
+            <Button Margin="0 5 0 0"  Content="Вперёд" x:Name="btnGo" Click="btnGo_Click"/>
+            <Button Margin="0 5 0 0"  Content="Выйти" x:Name="btnExit" Click="btnExit_Click"/>
+        </StackPanel>
+        <Frame Grid.Row="1" Grid.Column="1" x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
